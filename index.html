@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Para Elena — Todo mi amor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Dancing+Script:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="arte.css" />
+</head>
+
+<body>
+    <canvas id="particleCanvas"></canvas>
+    <nav class="navbar navbar-expand-lg elena-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand elena-brand" href="#hero">
+                <i class="fas fa-heart beat-icon"></i> Elena
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <i class="fas fa-heart text-pink"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link elena-nav-link" href="#razones">Razones</a></li>
+                    <li class="nav-item"><a class="nav-link elena-nav-link" href="#momentos">Momentos</a></li>
+                    <li class="nav-item"><a class="nav-link elena-nav-link" href="#promesas">Promesas</a></li>
+                    <li class="nav-item"><a class="nav-link elena-nav-link" href="#carta">Mi Carta</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero-section d-flex align-items-center justify-content-center text-center">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content position-relative">
+            <p class="hero-eyebrow" data-aos="fade-down" data-aos-duration="1000">Escrito desde el alma</p>
+            <h1 class="hero-title" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">
+                Elena,<br />
+                <span class="hero-subtitle-script">eres mi mundo entero</span>
+            </h1>
+            <div class="hero-divider" data-aos="fade-up" data-aos-delay="600">
+                <i class="fas fa-heart mx-2"></i>
+                <i class="fas fa-heart mx-2 small-heart"></i>
+                <i class="fas fa-heart mx-2"></i>
+            </div>
+            <p class="hero-tagline" data-aos="fade-up" data-aos-delay="800">
+                Cada día a tu lado es el regalo que nunca pedi<br />y jamás dejare de agradecer.
+            </p>
+            <div class="hero-stats row justify-content-center mt-5" data-aos="fade-up" data-aos-delay="1000">
+                <div class="col-4 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number" id="countDays">0</span>
+                        <span class="stat-label">Días juntos</span>
+                    </div>
+                </div>
+                <div class="col-4 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number" id="countSmiles">∞</span>
+                        <span class="stat-label">Sonrisas robadas</span>
+                    </div>
+                </div>
+                <div class="col-4 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number" id="countHearts">∞</span>
+                        <span class="stat-label">Latidos por ti</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#razones" class="btn btn-hero mt-5" data-aos="fade-up" data-aos-delay="1200">
+                Descubre por que <i class="fas fa-chevron-down ms-2"></i>
+            </a>
+        </div>
+        <div class="petals-container" id="petalsContainer"></div>
+    </section>
+
+    <section id="razones" class="section-razones py-5">
+        <div class="container py-5">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <p class="section-eyebrow">Las razones</p>
+                <h2 class="section-title">¿Por qué te amo, Elena?</h2>
+                <p class="section-subtitle">Déjame contarte las razones que encuentro cada vez que te miro.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="razon-card">
+                        <div class="razon-icon"><i class="fas fa-laugh-beam"></i></div>
+                        <h3 class="razon-title">Tu risa</h3>
+                        <p class="razon-text">Cuando ríes, el mundo se detiene. Tu risa es la melodía que convierte
+                            cualquier día gris en uno lleno de luz. No existe sonido más bello en todo el universo.</p>
+                        <div class="razon-decoration"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="razon-card">
+                        <div class="razon-icon"><i class="fas fa-brain"></i></div>
+                        <h3 class="razon-title">Tu inteligencia</h3>
+                        <p class="razon-text">La forma en que piensas me asombra cada día. Ves el mundo de maneras que
+                            yo nunca habría imaginado, y me haces mejor persona con cada conversación.</p>
+                        <div class="razon-decoration"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="razon-card">
+                        <div class="razon-icon"><i class="fas fa-hands-holding-heart"></i></div>
+                        <h3 class="razon-title">Tu bondad</h3>
+                        <p class="razon-text">Tienes un corazón tan grande que a veces me pregunto cómo cabe tanto amor
+                            en una sola persona. Eres genuinamente buena, y eso es lo más raro y precioso del mundo.</p>
+                        <div class="razon-decoration"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="razon-card">
+                        <div class="razon-icon"><i class="fas fa-shield-heart"></i></div>
+                        <h3 class="razon-title">Tu fuerza</h3>
+                        <p class="razon-text">Eres la persona más valiente que conozco. Enfrentas cada reto con una
+                            determinación que me inspira, y cuando flaqueo, tú eres mi fortaleza.</p>
+                        <div class="razon-decoration"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="razon-card">
+                        <div class="razon-icon"><i class="fas fa-eye"></i></div>
+                        <h3 class="razon-title">Tu mirada</h3>
+                        <p class="razon-text">Tus ojos cuentan historias que ninguna palabra podría expresar. Cuando me
+                            miras, siento que soy la persona más importante del mundo, y en ese instante, lo soy.</p>
+                        <div class="razon-decoration"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="razon-card">
+                        <div class="razon-icon"><i class="fas fa-star"></i></div>
+                        <h3 class="razon-title">Simplemente tú</h3>
+                        <p class="razon-text">No hay un catálogo completo para las razones por las que te amo. Es todo
+                            lo que eres, todo lo que piensas, todo lo que haces. Eres tú, Elena, y eso lo es todo.</p>
+                        <div class="razon-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="momentos" class="section-momentos py-5">
+        <div class="container py-5">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <p class="section-eyebrow">Nuestra historia</p>
+                <h2 class="section-title">Momentos que atesoro</h2>
+                <p class="section-subtitle">Cada momento contigo se convierte en un recuerdo que quiero guardar para
+                    siempre.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+                        <div class="timeline-emoji">✨</div>
+                        <h4>El primer encuentro</h4>
+                        <p>El instante en que apareciste, todo cambio. No sabia que ese momento iba a reescribir el
+                            resto de mi vida (muy dramatico pero es real).</p>
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+                        <div class="timeline-emoji">🌙</div>
+                        <h4>Las noches que hablamos sin parar (para mi seria por que para ti seria tarde)</h4>
+                        <p>Horas y horas conversando, riendo, descubriendo que podiamos hablar de todo y de nada, y que
+                            nunca habia suficiente tiempo.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="300">
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+                        <div class="timeline-emoji">🌅</div>
+                        <h4>Tus mensajes cuando me dicese que me cuide del colegio o que me abrigue</h4>
+                        <p>Saber que estabas pensando en mi aunque yo no estuviera </p>
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="400">
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+                        <div class="timeline-emoji">🌧️</div>
+                        <h4>Los días difíciles</h4>
+                        <p>Porque también los días nublados cuentan. Estar juntos en los momentos duros me enseñó que
+                            contigo puedo con todo (y aun asi me enojaba porque no me entendias).</p>
+                    </div>
+                </div>
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="500">
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+                        <div class="timeline-emoji">🎉</div>
+                        <h4>Cada celebración</h4>
+                        <p>No importa si era algo grande o pequeño. Contigo, cualquier excusa es razón suficiente para
+                            celebrar la vida.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="600">
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+                        <div class="timeline-emoji">🔮</div>
+                        <h4>Hoy y siempre</h4>
+                        <p>El mejor momento todavía está por venir. Y quiero vivirlo contigo, Elena, hoy, mañana y todos
+                            los dias que sigan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="promesas" class="section-promesas py-5">
+        <div class="container py-5">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <p class="section-eyebrow">Para siempre</p>
+                <h2 class="section-title">Mis promesas para ti</h2>
+                <p class="section-subtitle">No son palabras al viento. Son compromisos que llevo grabados en el corazón.
+                </p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="promesas-grid">
+                        <div class="promesa-item" data-aos="zoom-in" data-aos-delay="100">
+                            <span class="promesa-number">01</span>
+                            <i class="fas fa-sun promesa-icon"></i>
+                            <p>Prometerte que cada mañana que amanezca a tu lado, hare lo posible para que valga la
+                                pena.</p>
+                        </div>
+                        <div class="promesa-item" data-aos="zoom-in" data-aos-delay="200">
+                            <span class="promesa-number">02</span>
+                            <i class="fas fa-ear-listen promesa-icon"></i>
+                            <p>Escucharte de verdad, no solo con los oidos, sino con todo mi ser.</p>
+                        </div>
+                        <div class="promesa-item" data-aos="zoom-in" data-aos-delay="300">
+                            <span class="promesa-number">03</span>
+                            <i class="fas fa-seedling promesa-icon"></i>
+                            <p>Crecer contigo. Nunca dejar de aprender de ti ni de evolucionar a tu lado.</p>
+                        </div>
+                        <div class="promesa-item" data-aos="zoom-in" data-aos-delay="400">
+                            <span class="promesa-number">04</span>
+                            <i class="fas fa-umbrella promesa-icon"></i>
+                            <p>Ser tu refugio cuando el mundo sea demasiado, y tu compañero cuando sea maravilloso.</p>
+                        </div>
+                        <div class="promesa-item" data-aos="zoom-in" data-aos-delay="500">
+                            <span class="promesa-number">05</span>
+                            <i class="fas fa-fire-flame-curved promesa-icon"></i>
+                            <p>Que nunca se apague esta llama. Cuidarla, alimentarla y elegirte todos los dias.</p>
+                        </div>
+                        <div class="promesa-item" data-aos="zoom-in" data-aos-delay="600">
+                            <span class="promesa-number">06</span>
+                            <i class="fas fa-infinity promesa-icon"></i>
+                            <p>Amarte sin lmites, sin condiciones, sin reservas. Para siempre, Elena.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-quote d-flex align-items-center justify-content-center">
+        <div class="container text-center">
+            <div data-aos="fade-up" data-aos-duration="1200">
+                <i class="fas fa-quote-left quote-mark"></i>
+                <blockquote class="quote-text">
+                    "Eres la razon por la que creo que el universo<br />
+                    sabe lo que hace."
+                </blockquote>
+                <cite class="quote-author">— Escrito para Elena, con todo mi amor</cite>
+            </div>
+        </div>
+    </section>
+
+    <section id="carta" class="section-carta py-5">
+        <div class="container py-5">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <p class="section-eyebrow">Solo para ti</p>
+                <h2 class="section-title">Una carta desde mi corazon negro </h2>
+                <p class="section-subtitle">Haz clic para abrir la carta que escribi pensando en ti.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="carta-envelope-wrapper text-center" data-aos="zoom-in">
+                        <div class="carta-envelope" id="cartaEnvelope" onclick="abrirCarta()">
+                            <div class="envelope-top"></div>
+                            <div class="envelope-body">
+                                <div class="envelope-seal">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <p class="envelope-hint">Toca para abrir</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carta-letter d-none" id="cartaLetter" data-aos="fade-up">
+                        <div class="carta-paper">
+                            <div class="carta-header">
+                                <p class="carta-fecha">Para ti, siempre</p>
+                                <p class="carta-saludo">Mi querida Elena,</p>
+                            </div>
+                            <div class="carta-body" id="cartaTexto">
+                            </div>
+                            <div class="carta-footer">
+                                <p class="carta-firma">Con todo mi amor,</p>
+                                <p class="carta-nombre-firma">Tuyo para siempre ♥️</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-final d-flex align-items-center justify-content-center text-center position-relative">
+        <canvas id="fireworksCanvas"></canvas>
+        <div class="container final-content position-relative">
+            <div data-aos="zoom-in" data-aos-duration="1500">
+                <p class="final-eyebrow">Y así, cada día</p>
+                <h2 class="final-title">Te elijidoo a ti,<br /><span class="final-name">Elena</span></h2>
+                <p class="final-subtitle">Hoy, mañana y siempre.</p>
+                <div class="final-hearts mt-4" id="finalHearts">
+                    <i class="fas fa-heart fh fh1"></i>
+                    <i class="fas fa-heart fh fh2"></i>
+                    <i class="fas fa-heart fh fh3"></i>
+                    <i class="fas fa-heart fh fh4"></i>
+                    <i class="fas fa-heart fh fh5"></i>
+                </div>
+                <button class="btn btn-fireworks mt-4" onclick="launchFireworks()">
+                    <i class="fas fa-wand-magic-sparkles me-2"></i>Celebrar nuestro amor!
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="elena-footer text-center py-4">
+        <p class="mb-1">
+            Hecho con <i class="fas fa-heart text-pink beat-icon"></i> infinito para Eleña
+        </p>
+        <p class="footer-small">Cada linea de codigo fue escrita pensando en tiiii y tambien por que me dormi haciendo
+            esto AJAJAJ</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="logica.js"></script>
+</body>
+
+</html>
