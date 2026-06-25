@@ -175,15 +175,15 @@ window.abrirCarta = function() {
     document.querySelector('.carta-envelope-wrapper').classList.add('d-none');
     letter.classList.remove('d-none');
 
-    const texto = `Hay palabras que pensé durante mucho tiempo antes de atreverme a escribirlas. Palabras que se quedaban atrapadas en algún lugar entre el corazón y la garganta, sin saber muy bien cómo salir.
+    const texto = `Hay palabras que pense durante mucho tiempo antes de atreverme a escribirlas. Palabras que se quedaban atrapadas en algun lugar entre el corazon y la garganta, sin saber muy bien como salir.
 
-Pero hoy quiero decirte algo simple y verdadero: eres la persona más importante de mi vida. No porque no tenga nadie más, sino porque tú haces que todos los momentos sean mejores, más vivos, más llenos de significado.
+Pero hoy quiero decirte algo simple y verdadero: eres la persona mas importante de mi vida. No porque no tenga nadie mas, sino porque tu haces que todos los momentos sean mejores, mas vivos, mas llenos de significado.
 
-Cuando estoy contigo, el mundo tiene más color. Cuando no estás, algo falta. Y cada vez que apareces, sin importar cuántas veces ya lo hayas hecho, siento que es la primera vez que te veo.
+Cuando estoy contigo, el mundo tiene mas color. Cuando no estas, algo falta. Y cada vez que apareces, sin importar cuantas veces ya lo hayas hecho, siento que es la primera vez que te veo.
 
-Eso, Elena, es lo que me has dado. Un amor que no se gasta, que no se cansa, que sigue eligiéndote todos los días, en cada momento, sin dudarlo ni un segundo.
+Eso, Elena, es lo que me has dado. Un amor que no se gasta, que no se cansa, que sigue eligiendote todos los dias, en cada momento, sin dudarlo ni un segundo.
 
-Te amo. Hoy, mañana y todos los días que vengan.`;
+Te amo. Hoy, manana y todos los dias que vengan.`;
 
     typewriterEffect(textEl, texto, 28);
   }, 600);

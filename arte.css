@@ -608,7 +608,7 @@ body {
 }
 
 .section-quote::before {
-    content: '❝';
+    content: '"';
     position: absolute;
     font-size: 30rem;
     color: rgba(255, 255, 255, 0.03);
